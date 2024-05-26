@@ -35,6 +35,9 @@ const config: Config = {
       },
       animation: {
       },
+      fontFamily: {
+        unbounded: ["Unbounded", "sans-serif"],
+      },
     },
   },
   plugins: [require("tailwindcss-animate"), require("flowbite/plugin")],
