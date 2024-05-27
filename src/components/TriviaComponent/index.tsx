@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useEffect, useState } from 'react';
 import he from 'he';
 import { fetchTriviaQuestions } from '../../app/services/triviaService';
@@ -24,7 +22,6 @@ const TriviaComponent: React.FC<TriviaComponentProps> = ({ onQuizComplete }) => 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [selectedOption, setSelectedOption] = useState<string>('');
   const [correctAnswersCount, setCorrectAnswersCount] = useState<number>(0);
-
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
   useEffect(() => {
@@ -90,13 +87,13 @@ const TriviaComponent: React.FC<TriviaComponentProps> = ({ onQuizComplete }) => 
   };
 
   return (
-    <div className="flex flex-col items-center gap-4">
+    <div className={`flex flex-col items-center gap-4 ${isMobile ? '' : 'w-full'}`}>
       <h1 className="font-bold font-unbounded text-2xl tracking-wide">
         Question {currentQuestionIndex + 1}/10
       </h1>
       <div className="w-full flex justify-center">
         {questions.length > 0 && currentQuestionIndex < questions.length && (
-          <div className="flex flex-col items-center gap-3 w-2/4">
+          <div className={`flex flex-col items-center gap-3 ${isMobile ? '' : 'w-2/4'}`}>
             <h3 className="text-center font-semibold text-xl">
               "{he.decode(questions[currentQuestionIndex].category)}"
             </h3>
@@ -129,6 +126,7 @@ const TriviaComponent: React.FC<TriviaComponentProps> = ({ onQuizComplete }) => 
       </div>
     </div>
   );
+
 };
 
 export default TriviaComponent;

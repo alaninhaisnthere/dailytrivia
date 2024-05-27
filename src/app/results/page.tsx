@@ -29,13 +29,13 @@ const ResultsPage = () => {
   let bgImage = '';
 
   if (score >= 8 && score <= 10) {
-    resultText = `🎉 Bravo! 🎉 <br/> You have Scored ${score}!`;
+    resultText = `Bravo!🎉 <br/> You have Scored ${score}/10!`;
     bgImage = isMobile ? '/bg-result-1-mobile.png' : '/bg-result-1.png';
   } else if (score >= 5 && score <= 7) {
-    resultText = `Well done!👏 <br/> You have Scored ${score}!`;
+    resultText = `Well done!👏 <br/> You have Scored ${score}/10!`;
     bgImage = isMobile ? '/bg-result-2-mobile.png' : '/bg-result-2.png';
   } else if (score >= 1 && score <= 4) {
-    resultText = `Oops! 😬<br/> You have Scored ${score}...`;
+    resultText = `Oops! 😬<br/> You have Scored ${score}/10...`;
     bgImage = isMobile ? '/bg-result-3-mobile.png' : '/bg-result-3.png';
   } else {
     resultText = 'Invalid score';
@@ -53,21 +53,22 @@ const ResultsPage = () => {
         />
       </div>
       <div className={`relative z-10 flex flex-col justify-center items-center gap-5 text-center
-      rounded-2xl border-4 border-black bg-[#5DFF5D] p-20 font-semibold uppercase text-[] transition-all duration-300 
-      hover:translate-x-[-8px] hover:translate-y-[-8px] 
-      hover:rounded-md hover:shadow-[50px_50px_0px_black] 
-      active:translate-x-[0px] 
-      active:translate-y-[0px] 
-      active:rounded-2xl 
-      active:shadow-none"
+        rounded-2xl border-4 border-black bg-[#5DFF5D] p-20 font-semibold uppercase transition-all duration-300 
+        hover:translate-x-[-8px] hover:translate-y-[-8px] 
+        hover:rounded-md hover:shadow-[50px_50px_0px_black] 
+        active:translate-x-[0px] 
+        active:translate-y-[0px] 
+        active:rounded-2xl 
+        active:shadow-none
       `}>
-        <p className="text-4xl leading-relaxed font-unbounded font-bold tracking-wide" dangerouslySetInnerHTML={{ __html: resultText }}></p>
+        <p className={`font-bold tracking-wide ${isMobile ? 'text-3xl' : 'text-4xl'}`} dangerouslySetInnerHTML={{ __html: resultText }}></p>
         <LinkWithIcon
           href="/"
           text="play again"
           icon={Restart}
           hoverIcon={RestartHover}
-          width={25}
+          width={20}
+          textSize={'text-lg'}
         />
       </div>
     </main>
