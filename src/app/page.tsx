@@ -43,7 +43,13 @@ export default function Home() {
             <span className="font-semibold">D</span>aily <span className="font-semibold">T</span>rivia
           </h1>
           <div className={`flex justify-center  ${isMobile ? "" : "py-8"}`}>
-            <LinkWithIcon href="/quiz/" text="Start Quiz" icon={Arrow} hoverIcon={ArrowHover} width={40} />
+            <LinkWithIcon 
+            href="/quiz/" 
+            text="start quiz" 
+            icon={Arrow} 
+            hoverIcon={ArrowHover} 
+            width={40}
+             textSize={'text-4xl'} />
           </div>
         </div>
       </div>
