@@ -2,7 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+
 import LinkWithIcon from "@/components/LinkWithIcon";
+
 import Arrow from "../../public/arrow.png";
 import ArrowHover from "../../public/arrow-hover.png";
 import bgHomeDesktop from "../../public/bg-home.png";
@@ -41,7 +43,7 @@ export default function Home() {
             <span className="font-semibold">D</span>aily <span className="font-semibold">T</span>rivia
           </h1>
           <div className={`flex justify-center  ${isMobile ? "" : "py-8"}`}>
-            <LinkWithIcon href="/quiz/" text="Start Quiz" icon={Arrow} hoverIcon={ArrowHover} />
+            <LinkWithIcon href="/quiz/" text="Start Quiz" icon={Arrow} hoverIcon={ArrowHover} width={40} />
           </div>
         </div>
       </div>

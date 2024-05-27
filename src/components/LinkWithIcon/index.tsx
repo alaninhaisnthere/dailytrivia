@@ -9,30 +9,32 @@ interface LinkWithIconProps {
   text: string;
   icon: StaticImageData;
   hoverIcon: StaticImageData;
+  width: number;
 }
 
-const LinkWithIcon: React.FC<LinkWithIconProps> = ({ href, text, icon, hoverIcon }) => {
+const LinkWithIcon: React.FC<LinkWithIconProps> = ({ href, text, icon, hoverIcon, width }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <Link 
-      href={href} 
-      className="flex items-center justify-around tracking-wider 
+    <div className="flex flex-row items-center">
+      <Link
+        href={href}
+        className="flex items-center justify-around tracking-wider 
                  font-unbounded space-x-2 text-3xl text-black 
                  hover:animate-pulse
                  hover:text-[#043E3C] 
                  hover:scale-125 transition-transform duration-300 ease-in-out"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <span className="ml-2">{text}</span>
-      <Image
-        src={isHovered ? hoverIcon : icon}
-        alt="Ícone"
-        width={44}
-        className="pt-2"
-      />
-    </Link>
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <span className="ml-2">{text}</span>
+        <Image
+          src={isHovered ? hoverIcon : icon}
+          alt="Ícone"
+          width={width}
+        />
+      </Link>
+    </div>
   );
 }
 

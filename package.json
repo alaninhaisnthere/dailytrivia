@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@nextui-org/react": "^2.3.6",
     "axios": "^1.7.2",
     "flowbite": "^2.3.0",
     "he": "^1.2.0",
