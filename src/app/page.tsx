@@ -32,6 +32,7 @@ export default function Home() {
           src={isMobile ? bgHomeMobile : bgHomeDesktop}
           alt="Background"
           layout="fill"
+          objectFit="cover"
         />
       </div>
       <div className="relative z-10 container mx-auto px-4 text-center">
