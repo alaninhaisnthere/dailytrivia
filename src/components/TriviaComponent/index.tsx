@@ -113,14 +113,15 @@ const TriviaComponent: React.FC<TriviaComponentProps> = ({ onQuizComplete }) => 
       <button
         onClick={handleNextQuestion}
         disabled={!selectedOption}
-        className="mt-4 px-4 py-2 bg-[#FE909D] text-white rounded-md disabled:opacity-50"
+        className="mt-4 px-4 py-2 bg-[#FE909D] text-black font-bold rounded-md disabled:opacity-50
+        hover:scale-125 transition-transform duration-300 ease-in-out"
       >
-        {currentQuestionIndex < questions.length - 1 ? 'Next' : 'Check Score'}
+        {currentQuestionIndex < questions.length - 1 ? 'next question' : 'check score'}
       </button>
       <div className="py-3">
         <LinkWithIcon
           href="/"
-          text="Restart"
+          text="restart"
           icon={Restart}
           hoverIcon={RestartHover}
           width={25}
